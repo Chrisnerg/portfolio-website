@@ -137,6 +137,28 @@ nav.scrolled {
   box-shadow: 0 1px 0 var(--border2);
 }
 
+@media (min-width: 1025px) {
+  .site-nav {
+    mix-blend-mode: normal !important;
+    background: rgba(245,240,232,0.86);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 rgba(212, 207, 196, 0.7);
+  }
+
+  .site-nav-links a {
+    color: var(--ink) !important;
+  }
+
+  .site-nav-links a:hover {
+    color: var(--rust) !important;
+  }
+
+  .hero-section {
+    margin-top: 92px;
+    min-height: calc(100vh - 92px) !important;
+  }
+}
+
 @media (max-width: 1024px) {
   .site-nav {
     padding: 18px 28px !important;
