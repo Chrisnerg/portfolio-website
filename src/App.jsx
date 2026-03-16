@@ -61,7 +61,7 @@ function Nav() {
     <nav ref={navRef} className="site-nav" style={{ position:'fixed',top:0,left:0,right:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'24px 48px',mixBlendMode:'multiply' }}>
       <a href="#" className="site-nav-logo" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',letterSpacing:'0.1em',color:'var(--ink)',textDecoration:'none' }}>CM</a>
       <div className="site-nav-links" style={{ display:'flex',gap:'36px' }}>
-        {['About','Experience','Projects','Education','Contact'].map(l => (
+        {['About','Experience','Skills','Projects','Education','Contact'].map(l => (
           <a key={l} href={`#${l.toLowerCase()}`}
             style={{ fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.15em',color:'var(--muted)',textDecoration:'none',transition:'color 0.3s' }}
             onMouseEnter={e => e.target.style.color='var(--rust)'}
@@ -92,7 +92,7 @@ function Hero() {
           Production experience building real-time monitoring systems, WebSocket-driven state sync, and Windows OS-level tooling. BSc Computer Science & Informatics — University of Johannesburg.
         </p>
         <div className="animate-fadeUp-5 hero-actions" style={{ display:'flex',gap:'20px',alignItems:'center',marginTop:'48px' }}>
-          <a href="/Junior_software_engineer.pdf" target="_blank"
+          <a href="/Chrisnerg_Mqobo_CV.pdf" target="_blank"
             style={{ display:'inline-flex',alignItems:'center',gap:'10px',background:'var(--ink)',color:'var(--paper)',padding:'16px 32px',fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.15em',textDecoration:'none',transition:'background 0.3s,transform 0.2s' }}
             onMouseEnter={e=>{e.currentTarget.style.background='var(--rust)';e.currentTarget.style.transform='translateY(-2px)'}}
             onMouseLeave={e=>{e.currentTarget.style.background='var(--ink)';e.currentTarget.style.transform='translateY(0)'}}>
@@ -170,10 +170,10 @@ function About() {
           Full-stack developer with production experience building real-time monitoring systems, WebSocket-driven state synchronization, and Windows OS-level tooling. Proficient in React, TypeScript, Node.js, Electron, and PostgreSQL.
         </p>
         <p className="reveal" style={{ fontSize:'1rem',lineHeight:'1.85',color:'var(--slate2)' }}>
-          Completed BSc Computer Science and Informatics at the University of Johannesburg — ranked #1 in SA for Computer Science — in November 2025, awaiting graduation ceremony May 2026. Adept at writing clean, testable code and delivering reliable software.
+          Completed BSc Computer Science and Informatics at the University of Johannesburg in November 2025 (graduation ceremony May 2026). Currently pursuing the AWS Certified Developer – Associate and Microsoft Azure Fundamentals (AZ-900) certifications. Adept at writing clean, testable code and delivering reliable software.
         </p>
         <div className="reveal about-stats" style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'32px',marginTop:'48px',paddingTop:'48px',borderTop:'1px solid var(--border2)' }}>
-          {[['1+','Year Experience'],['100+','Students Mentored'],['40%','Regression Reduction']].map(([num,label]) => (
+          {[['50+','Sites Supported'],['100+','Students Mentored'],['40%','Regression Reduction']].map(([num,label]) => (
             <div key={label}>
               <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'3.5rem',color:'var(--rust)',lineHeight:1 }}>{num}</div>
               <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--muted)',marginTop:'4px' }}>{label}</div>
@@ -198,6 +198,8 @@ function Experience() {
         'Implemented a secure IPC communication layer (Main → Preload → Renderer bridge) with WebSocket contracts to synchronise device state updates from a Master Agent proxy in real time.',
         'Engineered low-level Windows OS integrations using the Windows Registry API (HKCU) and Win32 broadcasts to automate system-wide date/time configuration.',
         'Built a Playwright end-to-end testing suite that reduced manual regression testing effort by 40%.',
+        'Contribute to computer-vision features in Python and OpenCV, including OCR for automated weighbridge data capture and license-plate recognition for vehicle validation.',
+        'Perform on-site deployments, configuration, and site setup of desktop applications in client production environments, with ongoing production support and troubleshooting.',
       ]
     },
     {
@@ -222,7 +224,7 @@ function Experience() {
           </div>
           <h2 className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(3rem,6vw,6rem)',color:'var(--ink)',lineHeight:1 }}>Experience</h2>
         </div>
-        <a href="/Junior_software_engineer.pdf" target="_blank"
+        <a href="/Chrisnerg_Mqobo_CV.pdf" target="_blank"
           className="reveal"
           style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--muted)',textDecoration:'none',borderBottom:'1px solid var(--border2)',paddingBottom:'4px',transition:'color 0.3s,border-color 0.3s' }}
           onMouseEnter={e=>{e.currentTarget.style.color='var(--rust)';e.currentTarget.style.borderColor='var(--rust)'}}
@@ -259,17 +261,17 @@ function Experience() {
 function Skills() {
   const cards = [
     { icon:'⚡', cat:'Frontend', name:'React Ecosystem', tags:['React','Next.js','TypeScript','Tailwind','ShadCN','Zustand', 'DaisyUI'] },
-    { icon:'🔧', cat:'Backend', name:'Server & APIs', tags:['Node.js','Express.js','Flask','REST APIs','JWT','Zod'] },
-    { icon:'🗄️', cat:'Data & Infra', name:'Databases & Tools', tags:['PostgreSQL','MongoDB','Docker','Git','CI/CD','Playwright'] },
+    { icon:'🔧', cat:'Backend', name:'Server & APIs', tags:['Node.js','Express.js','REST APIs','WebSockets','JWT','Zod'] },
+    { icon:'🗄️', cat:'Data & Infra', name:'Databases & Tools', tags:['SQL Server','PostgreSQL','MongoDB','Docker','Git','CI/CD'] },
     { icon:'🖥️', cat:'Desktop', name:'Electron & OS', tags:['Electron','IPC Architecture','Windows Registry','WebSocket','WS','Win32'] },
     { icon:'🧪', cat:'Testing', name:'QA & Testing', tags:['Playwright','E2E Testing','Unit Tests','Regression','Postman'] },
-    { icon:'📐', cat:'Architecture', name:'System Design', tags:['WebSocket','RESTful APIs','Agile','Scrum','Microservices','IPC'] },
-    { icon:'💻', cat:'Languages', name:'Polyglot', tags:['JavaScript','TypeScript','Python','Java','SQL','C#'] },
-    { icon:'🤝', cat:'Soft Skills', name:'People Skills', tags:['Mentorship','Communication','Problem-Solving','Adaptability'] },
+    { icon:'📐', cat:'Architecture', name:'System Design', tags:['Real-Time Systems','RESTful APIs','IPC Architecture','Agile','Scrum'] },
+    { icon:'💻', cat:'Languages', name:'Polyglot', tags:['TypeScript','JavaScript','Python','SQL (T-SQL)','HTML5','CSS3'] },
+    { icon:'👁️', cat:'Computer Vision', name:'Vision & Automation', tags:['Python','OpenCV','OCR','License-Plate Recognition'] },
   ]
 
   return (
-    <section id="about" className="skills-section" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)' }}>
+    <section id="skills" className="skills-section" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)' }}>
       <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'0' }}>
         <div>
           <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px' }}>
@@ -303,10 +305,10 @@ function Skills() {
 /* ── Projects ───────────────────────────────────────────── */
 function Projects() {
   const projects = [
-    { num:'01', type:'Electron · Desktop App', name:'Real-Time Camera Dashboard', desc:'Production system for Tontrac Systems Analytics. Multi-checkpoint camera monitoring with live WebSocket state sync, health-based filtering (Healthy / Warning / Critical), and sequential Snapshot All workflows with real-time image analysis.', stack:['Electron','React','TypeScript','WebSocket','ShadCN','Tailwind'] },
-    { num:'02', type:'Electron · Desktop App', name:'TonTrac Date Format Configurator', desc:'Standalone Windows utility that detects, displays, and applies Windows regional date/time settings required by TonTrac. Registry reads/writes via node-winreg, automated backup/restore, and WM_SETTINGCHANGE broadcast for instant propagation.', stack:['Electron','React','Redux','node-winreg','Squirrel'] },
-    { num:'03', type:'Full-Stack · Web App', name:'URL Shortener', desc:'Full-stack URL shortening service with a Node.js/Express REST API and a React TypeScript frontend. Chose Drizzle ORM over Prisma for leaner bundle size, integrated Zod schema validation and JWT authentication.', stack:['Node.js','Express','React','TypeScript','Drizzle ORM','JWT','Zod'] },
-    { num:'04', type:'Frontend · Web App', name:'House Marketplace', desc:'Dynamic property listing platform with advanced search filtering, interactive listing components, and responsive UI. Used Zustand for complex state management across listing and search flows.', stack:['React.js','Zustand','JavaScript','CSS'] },
+    { num:'01', type:'Electron · Desktop App', name:'Real-Time Camera Dashboard', desc:'Production system for Tontrac Systems Analytics. Multi-checkpoint camera monitoring with live WebSocket state sync, health-based filtering (Healthy / Warning / Critical), and sequential Snapshot All workflows with real-time image analysis.', stack:['Electron','React','TypeScript','WebSocket','ShadCN','Tailwind'], link:null },
+    { num:'02', type:'Electron · Desktop App', name:'TonTrac Date Format Configurator', desc:'Standalone Windows utility that detects, displays, and applies Windows regional date/time settings required by TonTrac. Registry reads/writes via node-winreg, automated backup/restore, and WM_SETTINGCHANGE broadcast for instant propagation.', stack:['Electron','React','Redux','node-winreg','Squirrel'], link:null },
+    { num:'03', type:'Full-Stack · Web App', name:'URL Shortener', desc:'Full-stack URL shortening service with a Node.js/Express REST API and a React TypeScript frontend. Chose Drizzle ORM over Prisma for leaner bundle size, integrated Zod schema validation and JWT authentication.', stack:['Node.js','Express','React','TypeScript','Drizzle ORM','JWT','Zod'], link:'https://github.com/Chrisnerg/url-shortener-fullstack' },
+    { num:'04', type:'Automation · Node.js', name:'Web Content Scraper', desc:'Node.js automation tool that extracts structured content from web pages — applying the same automation principles used in my production Playwright test tooling.', stack:['Node.js','JavaScript','Automation'], link:'https://github.com/Chrisnerg/Web-Content-Scraper' },
   ]
 
   return (
@@ -317,10 +319,13 @@ function Projects() {
       </div>
       <h2 className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(3rem,6vw,6rem)',color:'var(--paper)',lineHeight:1 }}>Projects</h2>
       <div className="projects-grid" style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'2px',marginTop:'60px',background:'#1a1a1a' }}>
-        {projects.map((p, i) => (
-          <a key={i} href="https://github.com/Chrisnerg" target="_blank"
+        {projects.map((p, i) => {
+          const Tag = p.link ? 'a' : 'div'
+          const linkProps = p.link ? { href: p.link, target: '_blank', rel: 'noreferrer' } : {}
+          return (
+          <Tag key={i} {...linkProps}
             className={`project-card reveal reveal-delay-${i%2 === 0 ? 1 : 2}`}
-            style={{ background:'var(--ink)',padding:'56px 48px',display:'block',textDecoration:'none',transition:'background 0.4s' }}>
+            style={{ background:'var(--ink)',padding:'56px 48px',display:'block',textDecoration:'none',transition:'background 0.4s',cursor: p.link ? 'pointer' : 'default' }}>
             <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'5rem',color:'#1f1f1f',lineHeight:1,marginBottom:'-20px' }}>{p.num}</div>
             <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--rust)',marginBottom:'12px' }}>{p.type}</div>
             <div style={{ fontFamily:'DM Serif Display,serif',fontSize:'2rem',color:'var(--paper)',marginBottom:'16px',lineHeight:1.2 }}>{p.name}</div>
@@ -330,11 +335,11 @@ function Projects() {
                 <span key={tech} style={{ fontFamily:'Space Mono,monospace',fontSize:'0.6rem',padding:'5px 10px',border:'1px solid #2a2a2a',color:'#6a6a6a',letterSpacing:'0.1em',transition:'border-color 0.3s,color 0.3s' }}>{tech}</span>
               ))}
             </div>
-            <div style={{ display:'inline-flex',alignItems:'center',gap:'8px',marginTop:'24px',fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--rust)' }}>
-              View on GitHub <span>↗</span>
+            <div style={{ display:'inline-flex',alignItems:'center',gap:'8px',marginTop:'24px',fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color: p.link ? 'var(--rust)' : '#5a5a5a' }}>
+              {p.link ? <>View on GitHub <span>↗</span></> : <>Professional Work · Code Private</>}
             </div>
-          </a>
-        ))}
+          </Tag>
+        )})}
       </div>
     </section>
   )
@@ -367,7 +372,6 @@ function Education() {
           <div style={{ fontFamily:'Syne,sans-serif',fontSize:'0.9rem',color:'var(--muted)',marginBottom:'4px' }}>University of Johannesburg</div>
           <div style={{ fontFamily:'Syne,sans-serif',fontSize:'0.9rem',color:'var(--muted)',marginBottom:'4px' }}>Minor: Mathematics · IT Management</div>
           <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.72rem',color:'var(--muted)' }}>Studies completed: Nov 2025 · Ceremony: May 2026</div>
-          <div style={{ display:'inline-block',marginTop:'16px',padding:'6px 14px',background:'var(--sage)',color:'white',fontFamily:'Space Mono,monospace',fontSize:'0.6rem',textTransform:'uppercase',letterSpacing:'0.15em' }}>#1 CS University in South Africa</div>
         </div>
       </div>
       <div>
@@ -395,7 +399,7 @@ function Contact() {
     { icon:'☎', label:'068 119 5373', href:'tel:+27681195373' },
     { icon:'↗', label:'LinkedIn', href:'https://linkedin.com/in/chrisnerg-mqobo-8a2607262' },
     { icon:'↗', label:'GitHub', href:'https://github.com/Chrisnerg' },
-    { icon:'↓', label:'Download CV', href:'/Junior_software_engineer.pdf' },
+    { icon:'↓', label:'Download CV', href:'/Chrisnerg_Mqobo_CV.pdf' },
   ]
 
   return (
