@@ -58,9 +58,9 @@ function Nav() {
   }, [])
 
   return (
-    <nav ref={navRef} style={{ position:'fixed',top:0,left:0,right:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'24px 48px',mixBlendMode:'multiply' }}>
-      <a href="#" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',letterSpacing:'0.1em',color:'var(--ink)',textDecoration:'none' }}>CM</a>
-      <div style={{ display:'flex',gap:'36px' }}>
+    <nav ref={navRef} className="site-nav" style={{ position:'fixed',top:0,left:0,right:0,zIndex:100,display:'flex',alignItems:'center',justifyContent:'space-between',padding:'24px 48px',mixBlendMode:'multiply' }}>
+      <a href="#" className="site-nav-logo" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',letterSpacing:'0.1em',color:'var(--ink)',textDecoration:'none' }}>CM</a>
+      <div className="site-nav-links" style={{ display:'flex',gap:'36px' }}>
         {['About','Experience','Projects','Education','Contact'].map(l => (
           <a key={l} href={`#${l.toLowerCase()}`}
             style={{ fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.15em',color:'var(--muted)',textDecoration:'none',transition:'color 0.3s' }}
@@ -76,9 +76,9 @@ function Nav() {
 /* ── Hero ─────────────────────────────────────────────────── */
 function Hero() {
   return (
-    <section style={{ minHeight:'100vh',display:'grid',gridTemplateColumns:'1fr 1fr',position:'relative',overflow:'hidden' }}>
+    <section className="hero-section" style={{ minHeight:'100vh',display:'grid',gridTemplateColumns:'1fr 1fr',position:'relative',overflow:'hidden' }}>
       {/* Left */}
-      <div style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',padding:'160px 64px 80px 64px',position:'relative' }}>
+      <div className="hero-left" style={{ display:'flex',flexDirection:'column',justifyContent:'flex-end',padding:'160px 64px 80px 64px',position:'relative' }}>
         <div className="animate-fadeUp-1" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.25em',color:'var(--rust)',marginBottom:'24px' }}>
           — Available for opportunities
         </div>
@@ -91,7 +91,7 @@ function Hero() {
         <p className="animate-fadeUp-4" style={{ fontSize:'0.95rem',lineHeight:'1.8',color:'var(--slate2)',maxWidth:'420px',marginTop:'32px' }}>
           Production experience building real-time monitoring systems, WebSocket-driven state sync, and Windows OS-level tooling. BSc Computer Science & Informatics — University of Johannesburg.
         </p>
-        <div className="animate-fadeUp-5" style={{ display:'flex',gap:'20px',alignItems:'center',marginTop:'48px' }}>
+        <div className="animate-fadeUp-5 hero-actions" style={{ display:'flex',gap:'20px',alignItems:'center',marginTop:'48px' }}>
           <a href="/Junior_software_engineer.pdf" target="_blank"
             style={{ display:'inline-flex',alignItems:'center',gap:'10px',background:'var(--ink)',color:'var(--paper)',padding:'16px 32px',fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.15em',textDecoration:'none',transition:'background 0.3s,transform 0.2s' }}
             onMouseEnter={e=>{e.currentTarget.style.background='var(--rust)';e.currentTarget.style.transform='translateY(-2px)'}}
@@ -105,15 +105,15 @@ function Hero() {
             Get in Touch ↗
           </a>
         </div>
-        <div className="animate-fadeUp-6" style={{ position:'absolute',bottom:'40px',left:'64px',display:'flex',alignItems:'center',gap:'16px',fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--muted)' }}>
+        <div className="animate-fadeUp-6 hero-scroll-hint" style={{ position:'absolute',bottom:'40px',left:'64px',display:'flex',alignItems:'center',gap:'16px',fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--muted)' }}>
           <div style={{ width:'40px',height:'1px',background:'var(--muted)' }} />
           Scroll to explore
         </div>
       </div>
 
       {/* Right */}
-      <div style={{ position:'relative',display:'flex',alignItems:'flex-end',justifyContent:'center',background:'var(--cream)',overflow:'hidden' }}>
-        <div style={{ position:'absolute',fontFamily:'Bebas Neue,sans-serif',fontSize:'40vw',color:'var(--border2)',opacity:0.3,top:'50%',left:'50%',transform:'translate(-50%,-50%)',whiteSpace:'nowrap',pointerEvents:'none',lineHeight:1 }}>CM</div>
+      <div className="hero-right" style={{ position:'relative',display:'flex',alignItems:'flex-end',justifyContent:'center',background:'var(--cream)',overflow:'hidden' }}>
+        <div className="hero-watermark" style={{ position:'absolute',fontFamily:'Bebas Neue,sans-serif',fontSize:'40vw',color:'var(--border2)',opacity:0.3,top:'50%',left:'50%',transform:'translate(-50%,-50%)',whiteSpace:'nowrap',pointerEvents:'none',lineHeight:1 }}>CM</div>
         <img
           src={photoSrc}
           alt="Chrisnerg Mqobo"
@@ -121,11 +121,11 @@ function Hero() {
           style={{ position:'relative',zIndex:1,width:'100%',maxWidth:'480px',height:'100%',objectFit:'cover',objectPosition:'top' }}
         />
         {/* Stat badges */}
-        <div style={{ position:'absolute',top:'48px',right:'48px',textAlign:'right',zIndex:2 }}>
+        <div className="hero-meta-top" style={{ position:'absolute',top:'48px',right:'48px',textAlign:'right',zIndex:2 }}>
           <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.6rem',color:'var(--muted)',letterSpacing:'0.2em',textTransform:'uppercase' }}>Based in</div>
           <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',color:'var(--ink)',letterSpacing:'0.05em' }}>JHB, SA</div>
         </div>
-        <div style={{ position:'absolute',bottom:'100px',right:'48px',zIndex:2 }}>
+        <div className="hero-meta-bottom" style={{ position:'absolute',bottom:'100px',right:'48px',zIndex:2 }}>
           <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.6rem',color:'var(--muted)',letterSpacing:'0.2em',textTransform:'uppercase' }}>Status</div>
           <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',color:'var(--rust)',letterSpacing:'0.05em' }}>Open to Work</div>
         </div>
@@ -154,7 +154,7 @@ function Marquee() {
 /* ── About ───────────────────────────────────────────────── */
 function About() {
   return (
-    <section id="about" style={{ padding:'140px 64px',display:'grid',gridTemplateColumns:'1fr 2fr',gap:'80px',alignItems:'start',borderTop:'1px solid var(--border2)' }}>
+    <section id="about" className="about-section" style={{ padding:'140px 64px',display:'grid',gridTemplateColumns:'1fr 2fr',gap:'80px',alignItems:'start',borderTop:'1px solid var(--border2)' }}>
       <div>
         <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px' }}>
           <span style={{ width:'24px',height:'1px',background:'var(--rust)',flexShrink:0,display:'inline-block' }} />
@@ -172,7 +172,7 @@ function About() {
         <p className="reveal" style={{ fontSize:'1rem',lineHeight:'1.85',color:'var(--slate2)' }}>
           Completed BSc Computer Science and Informatics at the University of Johannesburg — ranked #1 in SA for Computer Science — in November 2025, awaiting graduation ceremony May 2026. Adept at writing clean, testable code and delivering reliable software.
         </p>
-        <div className="reveal" style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'32px',marginTop:'48px',paddingTop:'48px',borderTop:'1px solid var(--border2)' }}>
+        <div className="reveal about-stats" style={{ display:'grid',gridTemplateColumns:'repeat(3,1fr)',gap:'32px',marginTop:'48px',paddingTop:'48px',borderTop:'1px solid var(--border2)' }}>
           {[['1+','Year Experience'],['100+','Students Mentored'],['40%','Regression Reduction']].map(([num,label]) => (
             <div key={label}>
               <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'3.5rem',color:'var(--rust)',lineHeight:1 }}>{num}</div>
@@ -213,8 +213,8 @@ function Experience() {
   ]
 
   return (
-    <section id="experience" style={{ padding:'140px 64px',background:'var(--cream)',borderTop:'1px solid var(--border2)' }}>
-      <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'80px' }}>
+    <section id="experience" className="experience-section" style={{ padding:'140px 64px',background:'var(--cream)',borderTop:'1px solid var(--border2)' }}>
+      <div className="experience-head" style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'80px' }}>
         <div>
           <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px' }}>
             <span style={{ width:'24px',height:'1px',background:'var(--rust)',flexShrink:0,display:'inline-block' }} />
@@ -269,7 +269,7 @@ function Skills() {
   ]
 
   return (
-    <section id="about" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)' }}>
+    <section id="about" className="skills-section" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)' }}>
       <div style={{ display:'flex',justifyContent:'space-between',alignItems:'flex-end',marginBottom:'0' }}>
         <div>
           <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px' }}>
@@ -279,7 +279,7 @@ function Skills() {
           <h2 className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(3rem,6vw,6rem)',color:'var(--ink)',lineHeight:1 }}>Skills</h2>
         </div>
       </div>
-      <div className="reveal" style={{ display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:0,marginTop:'80px',borderTop:'1px solid var(--border2)',borderLeft:'1px solid var(--border2)' }}>
+      <div className="reveal skills-grid" style={{ display:'grid',gridTemplateColumns:'repeat(4,1fr)',gap:0,marginTop:'80px',borderTop:'1px solid var(--border2)',borderLeft:'1px solid var(--border2)' }}>
         {cards.map((card, i) => (
           <div key={i} className={`skill-card reveal reveal-delay-${(i%4)+1}`}
             style={{ padding:'40px 32px',borderRight:'1px solid var(--border2)',borderBottom:'1px solid var(--border2)',transition:'background 0.3s' }}
@@ -310,13 +310,13 @@ function Projects() {
   ]
 
   return (
-    <section id="projects" style={{ padding:'140px 64px',background:'var(--ink)',borderTop:'1px solid var(--border2)' }}>
+    <section id="projects" className="projects-section" style={{ padding:'140px 64px',background:'var(--ink)',borderTop:'1px solid var(--border2)' }}>
       <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px' }}>
         <span style={{ width:'24px',height:'1px',background:'var(--rust)',flexShrink:0,display:'inline-block' }} />
         Work
       </div>
       <h2 className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(3rem,6vw,6rem)',color:'var(--paper)',lineHeight:1 }}>Projects</h2>
-      <div style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'2px',marginTop:'60px',background:'#1a1a1a' }}>
+      <div className="projects-grid" style={{ display:'grid',gridTemplateColumns:'1fr 1fr',gap:'2px',marginTop:'60px',background:'#1a1a1a' }}>
         {projects.map((p, i) => (
           <a key={i} href="https://github.com/Chrisnerg" target="_blank"
             className={`project-card reveal reveal-delay-${i%2 === 0 ? 1 : 2}`}
@@ -352,14 +352,14 @@ function Education() {
   ]
 
   return (
-    <section id="education" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)',display:'grid',gridTemplateColumns:'1fr 1.5fr',gap:'100px' }}>
+    <section id="education" className="education-section" style={{ padding:'140px 64px',borderTop:'1px solid var(--border2)',display:'grid',gridTemplateColumns:'1fr 1.5fr',gap:'100px' }}>
       <div>
         <div className="section-label reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',display:'flex',alignItems:'center',gap:'12px',marginBottom:'16px' }}>
           <span style={{ width:'24px',height:'1px',background:'var(--rust)',flexShrink:0,display:'inline-block' }} />
           Education
         </div>
         <h2 className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(2.5rem,5vw,5rem)',color:'var(--ink)',lineHeight:1 }}>Academic<br />Background</h2>
-        <div className="reveal" style={{ marginTop:'48px',padding:'40px',border:'1px solid var(--border2)',transition:'border-color 0.3s' }}
+        <div className="reveal education-card" style={{ marginTop:'48px',padding:'40px',border:'1px solid var(--border2)',transition:'border-color 0.3s' }}
           onMouseEnter={e=>e.currentTarget.style.borderColor='var(--rust)'}
           onMouseLeave={e=>e.currentTarget.style.borderColor='var(--border2)'}>
           <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',textTransform:'uppercase',letterSpacing:'0.2em',color:'var(--rust)',marginBottom:'12px' }}>Degree</div>
@@ -399,13 +399,13 @@ function Contact() {
   ]
 
   return (
-    <section id="contact" style={{ padding:'160px 64px',background:'var(--cream)',textAlign:'center',borderTop:'1px solid var(--border2)',position:'relative',overflow:'hidden' }}>
+    <section id="contact" className="contact-section" style={{ padding:'160px 64px',background:'var(--cream)',textAlign:'center',borderTop:'1px solid var(--border2)',position:'relative',overflow:'hidden' }}>
       <div style={{ position:'absolute',fontFamily:'Bebas Neue,sans-serif',fontSize:'28vw',color:'var(--border2)',opacity:0.3,left:'50%',top:'50%',transform:'translate(-50%,-50%)',pointerEvents:'none',whiteSpace:'nowrap',lineHeight:1 }}>HIRE</div>
       <div className="reveal" style={{ fontFamily:'Space Mono,monospace',fontSize:'0.72rem',textTransform:'uppercase',letterSpacing:'0.3em',color:'var(--rust)',marginBottom:'32px' }}>Let's work together</div>
       <div className="reveal" style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'clamp(4rem,8vw,9rem)',lineHeight:0.9,color:'var(--ink)',marginBottom:'48px',position:'relative',zIndex:1 }}>
         Let's <span style={{ color:'var(--rust)' }}>Build</span><br />Something.
       </div>
-      <div style={{ display:'flex',justifyContent:'center',gap:'20px',flexWrap:'wrap',position:'relative',zIndex:1 }}>
+      <div className="contact-links" style={{ display:'flex',justifyContent:'center',gap:'20px',flexWrap:'wrap',position:'relative',zIndex:1 }}>
         {links.map((l,i) => (
           <a key={i} href={l.href} target={l.href.startsWith('http') ? '_blank' : undefined}
             className={`reveal reveal-delay-${i}`}
@@ -423,7 +423,7 @@ function Contact() {
 /* ── Footer ─────────────────────────────────────────────── */
 function Footer() {
   return (
-    <footer style={{ padding:'40px 64px',borderTop:'1px solid var(--border2)',display:'flex',justifyContent:'space-between',alignItems:'center' }}>
+    <footer className="site-footer" style={{ padding:'40px 64px',borderTop:'1px solid var(--border2)',display:'flex',justifyContent:'space-between',alignItems:'center' }}>
       <div style={{ fontFamily:'Bebas Neue,sans-serif',fontSize:'1.4rem',letterSpacing:'0.1em',color:'var(--ink)' }}>Chrisnerg Mqobo</div>
       <div style={{ fontFamily:'Space Mono,monospace',fontSize:'0.65rem',color:'var(--muted)',letterSpacing:'0.15em' }}>© 2026 · Full-Stack Engineer · Johannesburg, SA</div>
     </footer>

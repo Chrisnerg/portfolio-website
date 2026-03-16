@@ -136,3 +136,161 @@ nav.scrolled {
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--border2);
 }
+
+@media (max-width: 1024px) {
+  .site-nav {
+    padding: 18px 28px !important;
+  }
+
+  .hero-left,
+  .about-section,
+  .experience-section,
+  .skills-section,
+  .projects-section,
+  .education-section,
+  .contact-section,
+  .site-footer {
+    padding-left: 32px !important;
+    padding-right: 32px !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  .site-nav {
+    padding: 14px 18px !important;
+    flex-wrap: wrap;
+    gap: 10px;
+    mix-blend-mode: normal !important;
+  }
+
+  .site-nav-links {
+    width: 100%;
+    gap: 14px !important;
+    overflow-x: auto;
+    padding-bottom: 2px;
+  }
+
+  .site-nav-links a {
+    white-space: nowrap;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .hero-left {
+    padding: 130px 20px 48px 20px !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .hero-actions a {
+    justify-content: center;
+  }
+
+  .hero-scroll-hint {
+    display: none !important;
+  }
+
+  .hero-right {
+    min-height: 60vh;
+  }
+
+  .hero-right img {
+    max-width: 380px !important;
+    height: auto !important;
+  }
+
+  .hero-watermark {
+    font-size: 64vw !important;
+  }
+
+  .hero-meta-top {
+    top: 20px !important;
+    right: 20px !important;
+  }
+
+  .hero-meta-bottom {
+    bottom: 30px !important;
+    right: 20px !important;
+  }
+
+  .about-section,
+  .experience-section,
+  .skills-section,
+  .projects-section,
+  .education-section,
+  .contact-section,
+  .site-footer {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .about-section,
+  .education-section {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .experience-head {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 16px;
+    margin-bottom: 44px !important;
+  }
+
+  .exp-item {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    padding: 28px 0 !important;
+  }
+
+  .exp-item::before {
+    left: -20px !important;
+    right: -20px !important;
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-links a {
+    justify-content: center;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 8px;
+  }
+}
