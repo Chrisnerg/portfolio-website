@@ -397,7 +397,7 @@ function Contact() {
   const links = [
     { icon:'✉', label:'chrisnergmqobo@gmail.com', href:'mailto:chrisnergmqobo@gmail.com' },
     { icon:'☎', label:'068 119 5373', href:'tel:+27681195373' },
-    { icon:'↗', label:'LinkedIn', href:'https://linkedin.com/in/chrisnerg-mqobo-8a2607262' },
+    { icon:'↗', label:'LinkedIn', href:'https://www.linkedin.com/in/chrisnerg-mqobo/' },
     { icon:'↗', label:'GitHub', href:'https://github.com/Chrisnerg' },
     { icon:'↓', label:'Download CV', href:'/Chrisnerg_Mqobo_CV.pdf' },
   ]
